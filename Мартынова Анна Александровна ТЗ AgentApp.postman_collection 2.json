@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "0dc48bd6-761a-4fa7-9e80-bfb7398795d6",
+		"name": "Мартынова Анна Александровна ТЗ AgentApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " Получение токена",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"qa@qa.qa\",\n    \"password\":  \"111\"\n\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://partner.agentapp.ru/v1/users/obtain-token",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"agentapp",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"users",
+						"obtain-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание водителя",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"first_name\": \"Дмитрий\",\n   \"last_name\": \"Тарасов\",\n   \"patronymic\": \"Сергеевич\",\n   \"birth_date\": \"1987-01-13\",\n   \"gender\":\"M\",\n   \"driving_experience_started\": \"2006-08-08\",\n   \"driver_licenses\": [{\n   \t\t\"credential_type\": \"DRIVER_LICENSE\",\n\t\t\"number\": \"013837\",\n\t\t\"series\": \"47СТ\",\n\t\t\"issue_date\": \"2006-08-08\"\n\t}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/v1/insured_objects/drivers",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"insured_objects",
+						"drivers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание собственника",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"last_name\": \"Тарасов\",\n\t\"first_name\": \"Дмитрий\",\n\t\"patronymic\": \"Сергеевич\",\n\t\"birth_date\": \"1987-01-13\",\n\t\"gender\": \"M\",\n\t\"credential\": [{\n\t  \t\"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\n\t\t\"issue_date\": \"2017-03-08\",\n\t\t\"issue_point\": \"УФМС\",\n\t\t\"issue_point_code\": \"123-456\",\n\t\t\"number\": \"123123\",\n\t\t\"series\": \"1111\"\n\t}],\n\t\"address\": [{\n\t\t\"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 8 к 2\",\n\t\t\"address_type\": \"LEGAL_ADDRESS\"\n\t},\n\t{\n\t\t\"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 8 к 1\",\n\t\t\"address_type\": \"ACTUAL_ADDRESS\"\n\t}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/v1/insured_objects/owners/natural_persons",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"insured_objects",
+						"owners",
+						"natural_persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание страхователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"last_name\": \"Тарасов\",\n\t\"first_name\": \"Дмитрий\",\n\t\"patronymic\": \"Сергеевич\",\n\t\"birth_date\": \"1987-01-13\",\n\t\"credential\": [{\n\t  \t\"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\n\t\t\"issue_date\": \"2017-03-08\",\n\t\t\"issue_point\": \"УФМС\",\n\t\t\"issue_point_code\": \"123-456\",\n\t\t\"number\": \"123123\",\n\t\t\"series\": \"1111\"\n\t}],\n\t\"address\": [{\n\t\t\"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 8 к 2\",\n\t\t\"address_type\": \"LEGAL_ADDRESS\"\n\t},\n\t{\n\t\t\"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 8 к 1\",\n\t\t\"address_type\": \"ACTUAL_ADDRESS\"\n\t}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/insurants/natural_persons",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						"insurants",
+						"natural_persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание автомобиля",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"car_model_id\": 864026180,\n  \"engine_power\": 211, \n  \"chassis_number\": null,\n  \"car_body_number\": null,\n  \"vin_number\": \"WAUZZZ8T4BA037241\",\n  \"number_plate\": \"Р904МХ178\",\n  \"manufacturing_year\": 2010,\n  \"max_mass\": null,\n  \"has_trailer\": false,\n  \"credential\": [{\n  \t  \"credential_type\": \"VEHICLE_REGISTRATION\",\n      \"issue_date\": \"2010-11-01\",\n      \"number\": \"267461\",\n      \"series\": \"78УН\"\n  },\n  {\n      \"credential_type\": \"DIAGNOSTIC_CHART\",\n      \"number\": \"021960081809862\",\n      \"series\": \"series\",\n      \"expiration_date\": \"2020-06-17\"\n    }]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/cars",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Объединение субъектов и объектов страхования в одну сущность",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"drivers\": [\n    \"347f5d71-732f-4153-a7ca-60c86f6c1392\"\n  ],\n  \"owner\": \"f0910437-65ef-4678-b737-e4eb64e03065\",\n  \"car\": \"792f3a6d-dc21-4176-9810-f5077b10cb5e\",\n  \"insurant\": \"bb938d6e-f862-4b1b-b31a-fcc8d4130d2c\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание договора",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valid_from\": \"2023-06-01\",\n    \"valid_to\": \"2024-01-01\",\n    \"insurance_period\": 8,\n    \"target_of_using\": 11,\n    \"drivers_ids\": [\n        \"347f5d71-732f-4153-a7ca-60c86f6c1392\"\n    ],\n    \"is_car_without_registration\": false,\n    \"engine_power\": 211,\n    \"has_car_trailer\": false,\n    \"car_type\": \"B\",\n    \"owner_registration\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 8 к 2\",\n    \"owner_id\": \"f0910437-65ef-4678-b737-e4eb64e03065\",\n    \"periods\": [],\n    \"insurer\": [\n        {\n            \"phone\": \"89234723442\",\n            \"email\": \"test@test.ru\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/v3/agreements/calculations",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v3",
+						"agreements",
+						"calculations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновление договора в системе",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"insured_object\": \"77529a87-e8a9-46c3-a6b5-f2cc2cd9c40e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/8a2dbf2f-bb68-4eb3-87cb-8077260707e1",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"agreements",
+						"8a2dbf2f-bb68-4eb3-87cb-8077260707e1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Полный расчет по СК",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/{{agreement_id}}/results/TEST_COMPANY",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"agreements",
+						"{{agreement_id}}",
+						"results",
+						"TEST_COMPANY"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
