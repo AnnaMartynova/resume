@@ -18,4 +18,6 @@ https://docs.google.com/spreadsheets/d/1JmwZmQsnLelzu3y3ZKj8UtEakE-ox4H7MrlFkMOQ
     
 https://github.com/AnnaMartynova/resume/blob/main/%D0%9C%D0%B0%D1%80%D1%82%D1%8B%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%90%D0%BD%D0%BD%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%A2%D0%97%20AgentApp.postman_collection%202.json
     
-    
+5 - БагРепорт сайта https://lucky-group.com/test-task/#
+
+https://docs.google.com/spreadsheets/d/104nicIDLAcJxsBTxgwHbnE1Y4frUhW2NWPJKlW4ADu4/edit?usp=sharing
