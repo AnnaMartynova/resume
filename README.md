@@ -21,3 +21,7 @@ https://github.com/AnnaMartynova/resume/blob/main/%D0%9C%D0%B0%D1%80%D1%82%D1%8B
 5 - Баг Репорт сайта https://lucky-group.com/test-task/#
 
 https://docs.google.com/spreadsheets/d/104nicIDLAcJxsBTxgwHbnE1Y4frUhW2NWPJKlW4ADu4/edit?usp=sharing
+
+6 - Чек - лист (страницы https://widgets.inssmart.ru/contract/mortgage/?appId=79f46bfb-d4ba-50aa-8269-7289dd16700c&secret=6ca520c0-328b-5b65-ab5c-b41332a3e667)
+
+https://checkvist.com/p/kce7U1RtKG8SGqvt0JfDQH
